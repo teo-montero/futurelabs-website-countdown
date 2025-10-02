@@ -11,7 +11,7 @@ export default function Home() {
   });
 
   useEffect(() => {
-    const launchDate = new Date("2025-10-21T00:00:00");
+    const launchDate = new Date("2025-10-21T12:00:00");
     const timer = setInterval(() => {
       const now = new Date();
       const diff = launchDate.getTime() - now.getTime();
