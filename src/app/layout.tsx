@@ -3,8 +3,8 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 
 export const metadata = {
-  title: "FutureLabs Countdown",
-  description: "Launching soon...",
+  title: "FutureLabs",
+  description: "Digitalizing the UK's most impactful charities",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -11,7 +11,7 @@ export default function Home() {
   });
 
   useEffect(() => {
-    const launchDate = new Date("2025-10-21T12:00:00");
+    const launchDate = new Date("2025-10-21T00:00:00");
     const timer = setInterval(() => {
       const now = new Date();
       const diff = launchDate.getTime() - now.getTime();
@@ -30,29 +30,31 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-[#0f172a] to-black text-white px-6">
+    <main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-[#0f172a] to-black text-white px-6 py-12">
       {/* Headline */}
-      <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-center mb-12">
+      <h1 className="text-4xl sm:text-7xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-center mb-12">
         FutureLabs is Launching Soon
       </h1>
 
       {/* Countdown */}
-      <div className="flex gap-10 text-center">
+      <div className="grid grid-cols-2 sm:flex sm:gap-8 gap-6 text-center">
         {Object.entries(timeLeft).map(([label, value]) => (
-          <div key={label}>
-            <p className="text-6xl md:text-7xl font-bold">{value}</p>
-            <p className="mt-2 text-sm uppercase tracking-wide text-gray-400">{label}</p>
+          <div key={label} className="flex flex-col items-center">
+            <p className="text-6xl sm:text-5xl md:text-7xl font-bold">{value}</p>
+            <p className="mt-2 text-sm sm:text-sm uppercase tracking-wide text-gray-400">
+              {label}
+            </p>
           </div>
         ))}
       </div>
 
       {/* Subtext */}
-      <p className="mt-16 text-gray-400 max-w-lg text-center text-lg leading-relaxed">
+      <p className="mt-10 sm:mt-16 text-gray-400 max-w-lg text-center text-sm sm:text-base leading-relaxed">
         We’re preparing something special. Stay tuned.
       </p>
 
       {/* Footer */}
-      <footer className="absolute bottom-8 text-gray-500 text-sm">
+      <footer className="absolute bottom-6 text-gray-500 text-xs sm:text-sm">
         © {new Date().getFullYear()} FutureLabs. All rights reserved.
       </footer>
     </main>
